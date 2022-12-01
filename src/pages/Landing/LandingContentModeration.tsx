@@ -2,8 +2,6 @@ import type { FC } from "react";
 
 import Icon from "../../assets/froggy-moderation.png";
 
-import { LandingContentImage } from "./LandingContentImage";
-
 export const LandingContentModeration: FC = () => (
   <div className="w-full flex justify-center bg-slate-800">
     <div

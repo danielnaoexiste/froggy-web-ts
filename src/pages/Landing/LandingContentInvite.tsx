@@ -27,7 +27,9 @@ export const LandingContentInvite: FC = () => {
       id="invite-section"
       className="h-section w-full lg:w-4/6 self-center flex flex-col lg:flex-row-reverse justify-center lg:justify-around items-center"
     >
-      <LandingContentImage src={Icon} />
+      <div className="mb-8 lg:mb-0 flex flex-col items-center w-72">
+        <img src={Icon} alt="icon" className="rounded-full w-full h-full" />
+      </div>
 
       <div
         className="sm:ml-0 lg:ml-4 flex flex-col justify-flex-end"
