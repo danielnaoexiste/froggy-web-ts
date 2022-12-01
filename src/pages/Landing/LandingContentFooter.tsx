@@ -1,13 +1,14 @@
 import type { FC } from "react";
+import { Link } from "react-router-dom";
 
 export const LandingContentFooter: FC = () => (
   <footer className="my-4 flex items-center justify-around xs:flex-col sm:flex-row">
-    <a href="/privacy-policy" className="hover:underline">
+    <Link to="/privacy-policy" className="hover:underline">
       privacy policy
-    </a>
-    <a href="/terms-of-use" className="hover:underline">
+    </Link>
+    <Link to="/terms-of-use" className="hover:underline">
       terms of use
-    </a>
+    </Link>
     <a
       target="_blank"
       rel="noreferrer"

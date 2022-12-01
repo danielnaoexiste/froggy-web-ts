@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { useState } from "react";
 
 import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import Icon from "../../assets/icon.png";
 import { useAuth } from "../../utils/useAuth";
@@ -15,6 +16,7 @@ export const Header: FC = () => {
     if (!isLoading) {
       return data ? "server-selection" : "/";
     }
+    return "/";
   }, [data, isLoading]);
 
   return (
@@ -22,9 +24,9 @@ export const Header: FC = () => {
       <nav className="relative flex flex-wrap items-center justify-between p-2 mb-3">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <a
+            <Link
               className="flex flex-1 leading-relaxed mr-4 py-2 whitespace-nowrap"
-              href={href}
+              to={href}
             >
               <img
                 src={Icon}
@@ -33,7 +35,7 @@ export const Header: FC = () => {
                 className="rounded-full mr-4"
               />
               <span className="text-brand text-2xl">Froggy</span>
-            </a>
+            </Link>
             <button
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
@@ -51,13 +53,13 @@ export const Header: FC = () => {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
-                <a
+                <Link
                   className="px-3 py-2 flex items-center text-sm leading-snug text-white hover:opacity-75"
-                  href="/docs"
+                  to="/docs"
                 >
                   <i className="text-lg leading-lg text-white opacity-75"></i>
                   <span className="ml-2">documentation</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a
