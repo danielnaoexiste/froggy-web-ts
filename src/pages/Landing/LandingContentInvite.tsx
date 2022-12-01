@@ -7,8 +7,6 @@ import Button from "../../components/Button";
 import { FaDiscord } from "react-icons/fa";
 import { MdSettings } from "react-icons/md";
 
-import { LandingContentImage } from "./LandingContentImage";
-
 export const LandingContentInvite: FC = () => {
   const redirect = useCallback(() => {
     window.location.href = import.meta.env.VITE_DISCORD_REDIRECT;
