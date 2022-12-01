@@ -7,6 +7,8 @@ import Button from "../../components/Button";
 import { FaDiscord } from "react-icons/fa";
 import { MdSettings } from "react-icons/md";
 
+import { LandingContentImage } from "./LandingContentImage";
+
 export const LandingContentInvite: FC = () => {
   const redirect = useCallback(() => {
     window.location.href = import.meta.env.VITE_DISCORD_REDIRECT;
@@ -23,17 +25,9 @@ export const LandingContentInvite: FC = () => {
   return (
     <section
       id="invite-section"
-      className="h-section w-full lg:w-5/6 self-center flex flex-col lg:flex-row-reverse justify-center lg:justify-around items-center"
+      className="h-section w-full lg:w-4/6 self-center flex flex-col lg:flex-row-reverse justify-center lg:justify-around items-center"
     >
-      <div className="mb-8 lg:mb-0 flex flex-col items-center">
-        <img
-          src={Icon}
-          alt="icon"
-          width={200}
-          height={200}
-          className="rounded-full"
-        />
-      </div>
+      <LandingContentImage src={Icon} />
 
       <div
         className="sm:ml-0 lg:ml-4 flex flex-col justify-flex-end"
@@ -41,7 +35,7 @@ export const LandingContentInvite: FC = () => {
       />
 
       <div className="mb-2 w-5/6 flex flex-col">
-        <div className="flex justify-center lg:justify-start">
+        <div className="flex justify-center lg:justify-start font-medium">
           <span className="text-brand text-2xl lg:text-5xl">Froggy</span>
           <span className="ml-4 text-2xl lg:text-5xl">Bot</span>
         </div>

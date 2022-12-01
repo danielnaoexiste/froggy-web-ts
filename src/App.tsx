@@ -7,8 +7,10 @@ import LoaderBox from "./components/LoaderBox";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const Landing = lazy(() => import("./pages/Landing"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
+const ServerSelection = lazy(() => import("./pages/Journey/ServerSelection"));
 
 const App: FC = () => {
   return (
@@ -18,9 +20,10 @@ const App: FC = () => {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-use" element={<TermsAndConditions />} />
         <Route element={<ProtectedRoute />}>
-          <Route path="/server-selection" element={<Landing />} />
+          <Route path="/server-selection" element={<ServerSelection />} />
           <Route path="/dashboard" element={<Landing />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );

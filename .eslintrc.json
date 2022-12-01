@@ -22,6 +22,7 @@
     "rules": {
         "@typescript-eslint/consistent-type-imports": "warn",
         "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off"
+        "react/react-in-jsx-scope": "off",
+        "no-extra-boolean-cast": "off"
     }
 }

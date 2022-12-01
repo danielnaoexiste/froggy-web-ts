@@ -6,10 +6,12 @@ interface ButtonProps {
   children?: ReactNode;
 }
 
-export const Button: FC<ButtonProps> = ({ onClick, PrefixIcon, children }) => (
+export const Button: FC<ButtonProps> = ({ onClick, children, PrefixIcon }) => (
   <button
     onClick={onClick}
-    className="bg-slate-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded inline-flex items-center gap-2"
+    className={
+      "bg-slate-700 hover:bg-slate-600 transition duration-500 text-white font-bold py-2 px-4 rounded inline-flex items-center gap-2"
+    }
   >
     {!!PrefixIcon && <PrefixIcon />}
 

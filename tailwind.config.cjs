@@ -14,6 +14,9 @@ module.exports = {
       spacing: {
         section: "96vh",
       },
+      gridTemplateColumns: {
+        server: "repeat(auto-fill, minmax(350px, 1fr))",
+      },
     },
   },
   plugins: [],

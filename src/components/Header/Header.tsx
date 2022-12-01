@@ -1,20 +1,25 @@
 import type { FC } from "react";
+import { useMemo } from "react";
 import { useState } from "react";
 
 import { FaBars } from "react-icons/fa";
 
 import Icon from "../../assets/icon.png";
+import { useAuth } from "../../utils/useAuth";
 
-interface HeaderProps {
-  href?: string;
-}
-
-export const Header: FC<HeaderProps> = ({ href = "#" }) => {
+export const Header: FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const { data, isLoading } = useAuth();
+
+  const href = useMemo(() => {
+    if (!isLoading) {
+      return data ? "server-selection" : "/";
+    }
+  }, [data, isLoading]);
 
   return (
-    <header>
-      <nav className="relative flex flex-wrap items-center justify-between p-2 bg-slate-600 mb-3">
+    <header className="sticky top-0 z-50 backdrop-blur border-b border-slate-900/10">
+      <nav className="relative flex flex-wrap items-center justify-between p-2 mb-3">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <a

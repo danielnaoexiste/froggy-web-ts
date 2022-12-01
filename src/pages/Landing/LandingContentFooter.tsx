@@ -1,7 +1,7 @@
 import type { FC } from "react";
 
 export const LandingContentFooter: FC = () => (
-  <div className="my-4 flex items-center justify-around xs:flex-col sm:flex-row">
+  <footer className="my-4 flex items-center justify-around xs:flex-col sm:flex-row">
     <a href="/privacy-policy" className="hover:underline">
       privacy policy
     </a>
@@ -16,5 +16,5 @@ export const LandingContentFooter: FC = () => (
     >
       support server
     </a>
-  </div>
+  </footer>
 );
