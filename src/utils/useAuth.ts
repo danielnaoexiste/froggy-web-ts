@@ -6,9 +6,7 @@ interface AuthStatus {
   isLoading: boolean;
 }
 
-type AuthFunc = () => AuthStatus
-
-export const useAuth: AuthFunc = () => {
+export const useAuth = (): AuthStatus => {
   const { data, isLoading } = useQueryStatus();
 
   return { data, isLoading };

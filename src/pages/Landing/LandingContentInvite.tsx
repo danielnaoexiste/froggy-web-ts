@@ -39,7 +39,8 @@ export const LandingContentInvite: FC = () => {
           <span className="text-brand text-2xl lg:text-5xl">Froggy</span>
           <span className="ml-4 text-2xl lg:text-5xl">Bot</span>
         </div>
-        <span className="pt-4 text-center lg:text-left text-2xl">
+
+        <span className="pt-4 px-4 lg:px-0 text-center lg:text-left text-2xl">
           customizable general purpose bot for moderators and anime fans.
         </span>
 
