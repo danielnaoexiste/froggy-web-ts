@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import React from "react";
 
 import { useNavigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -37,8 +37,4 @@ export const ReactQueryProvider: React.FC<Props> = ({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
-};
-
-ReactQueryProvider.propTypes = {
-  children: PropTypes.node,
 };

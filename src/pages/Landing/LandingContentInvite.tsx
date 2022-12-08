@@ -2,10 +2,10 @@ import type { FC } from "react";
 import { useCallback } from "react";
 
 import Icon from "../../assets/icon.png";
-import Button from "../../components/Button";
 
 import { FaDiscord } from "react-icons/fa";
 import { MdSettings } from "react-icons/md";
+import { Box, Button, Text } from "@danielnaoexiste/froggy-components";
 
 export const LandingContentInvite: FC = () => {
   const redirect = useCallback(() => {
@@ -21,38 +21,81 @@ export const LandingContentInvite: FC = () => {
   }, []);
 
   return (
-    <section
+    <Box
       id="invite-section"
-      className="h-section w-full lg:w-4/6 self-center flex flex-col lg:flex-row-reverse justify-center lg:justify-around items-center"
+      height="96vh"
+      display="flex"
+      alignSelf="center"
+      alignItems="center"
+      width={{ _: "100%", web: "67%" }}
+      flexDirection={{ _: "column", web: "row-reverse" }}
+      justifyContent={{ _: "center", web: "space-around" }}
     >
-      <div className="mb-8 lg:mb-0 flex flex-col items-center w-72">
-        <img src={Icon} alt="icon" className="rounded-full w-full h-full" />
-      </div>
+      <Box
+        mb={{ _: 11, web: 0 }}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        width={{ _: "8rem", mobile: "12rem", web: "18rem" }}
+      >
+        <img
+          src={Icon}
+          alt="icon"
+          style={{ borderRadius: "9999px", width: "100%", height: "100%" }}
+        />
+      </Box>
 
-      <div
-        className="sm:ml-0 lg:ml-4 flex flex-col justify-flex-end"
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="flex-end"
         style={{ minWidth: "256px" }}
       />
 
-      <div className="mb-2 w-5/6 flex flex-col">
-        <div className="flex justify-center lg:justify-start font-medium">
-          <span className="text-brand text-2xl lg:text-5xl">Froggy</span>
-          <span className="ml-4 text-2xl lg:text-5xl">Bot</span>
-        </div>
+      <Box display="flex" flexDirection="column" width="90%" mb={4}>
+        <Box
+          display="flex"
+          justifyContent={{ _: "center", web: "flex-start" }}
+          fontWeight="medium"
+        >
+          <Text color="primary" fontSize={{ _: "24px", tablet: "48px" }}>
+            Froggy
+          </Text>
+          <Text ml={8} fontSize={{ _: "24px", tablet: "48px" }}>
+            Bot
+          </Text>
+        </Box>
 
-        <span className="pt-4 px-4 lg:px-0 text-center lg:text-left text-2xl">
+        <Text
+          pt={8}
+          fontSize={{ _: "16px", tablet: "24px" }}
+          px={{ _: 8, tablet: 0 }}
+          textAlign={{ _: "center", web: "left" }}
+        >
           customizable general purpose bot for moderators and anime fans.
-        </span>
+        </Text>
 
-        <div className="flex my-4 gap-2 justify-center lg:justify-start">
-          <Button onClick={() => invite()} PrefixIcon={FaDiscord}>
-            invite
-          </Button>
-          <Button onClick={() => redirect()} PrefixIcon={MdSettings}>
-            dashboard
-          </Button>
-        </div>
-      </div>
-    </section>
+        <Box
+          gap="2"
+          display="flex"
+          my={{ _: 11, web: 8 }}
+          justifyContent={{ _: "center", web: "flex-start" }}
+        >
+          <Button
+            mr={4}
+            onClick={() => invite()}
+            prefix={<FaDiscord />}
+            label="invite"
+            variant="outlined"
+          />
+          <Button
+            onClick={() => redirect()}
+            prefix={<MdSettings />}
+            label="dashboard"
+            variant="outlined"
+          />
+        </Box>
+      </Box>
+    </Box>
   );
 };
