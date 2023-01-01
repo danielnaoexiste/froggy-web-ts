@@ -36,7 +36,7 @@ export const LandingContentInvite: FC = () => {
         display="flex"
         flexDirection="column"
         alignItems="center"
-        width={{ _: "8rem", mobile: "12rem", web: "18rem" }}
+        width={{ _: "8rem", mobile: "12rem", web: "19rem" }}
       >
         <img
           src={Icon}
@@ -45,18 +45,13 @@ export const LandingContentInvite: FC = () => {
         />
       </Box>
 
-      <Box
-        display="flex"
-        flexDirection="column"
-        justifyContent="flex-end"
-        style={{ minWidth: "256px" }}
-      />
+      <Box style={{ minWidth: "256px" }} />
 
       <Box display="flex" flexDirection="column" width="90%" mb={4}>
         <Box
           display="flex"
-          justifyContent={{ _: "center", web: "flex-start" }}
           fontWeight="medium"
+          justifyContent={{ _: "center", web: "flex-start" }}
         >
           <Text color="primary" fontSize={{ _: "24px", tablet: "48px" }}>
             Froggy
@@ -67,7 +62,7 @@ export const LandingContentInvite: FC = () => {
         </Box>
 
         <Text
-          pt={8}
+          pt={4}
           fontSize={{ _: "16px", tablet: "24px" }}
           px={{ _: 8, tablet: 0 }}
           textAlign={{ _: "center", web: "left" }}
@@ -76,13 +71,12 @@ export const LandingContentInvite: FC = () => {
         </Text>
 
         <Box
-          gap="2"
           display="flex"
           my={{ _: 11, web: 8 }}
           justifyContent={{ _: "center", web: "flex-start" }}
+          style={{ gap: ".5rem" }}
         >
           <Button
-            mr={4}
             onClick={() => invite()}
             prefix={<FaDiscord />}
             label="invite"

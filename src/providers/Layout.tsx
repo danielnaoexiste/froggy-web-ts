@@ -1,3 +1,4 @@
+import { Box } from "@danielnaoexiste/froggy-components";
 import type { FC, ReactNode } from "react";
 import Header from "../components/Header";
 
@@ -7,9 +8,9 @@ interface Props {
 
 export const Layout: FC<Props> = ({ children }) => {
   return (
-    <div className="bg-slate-900 text-white font-code">
+    <Box bg="#0F172A" color="white">
       <Header />
       {children}
-    </div>
+    </Box>
   );
 };
